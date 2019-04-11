@@ -110,6 +110,8 @@ app.on("before-quit", (event) => {
 	process.exit(0);
 });
 
+app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');
+
 // Start the core application if server is run on localhost
 // This starts all node helpers and starts the webserver.
 if (["localhost", "127.0.0.1", "::1", "::ffff:127.0.0.1", undefined].indexOf(config.address) > -1) {
